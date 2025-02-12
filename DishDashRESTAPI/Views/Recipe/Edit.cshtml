@@ -1,0 +1,42 @@
+﻿@model DishDashRESTAPIDatabase.Models.Recipe
+
+@{
+    ViewData["Title"] = "Edit Recipe";
+}
+
+<h2>Edit Recipe</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group">
+        <label asp-for="Category"></label>
+        <input asp-for="Category" class="form-control" />
+        <span asp-validation-for="Category" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Ingredient"></label>
+        <textarea asp-for="Ingredient" class="form-control"></textarea>
+        <span asp-validation-for="Ingredient" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Instruction"></label>
+        <textarea asp-for="Instruction" class="form-control"></textarea>
+        <span asp-validation-for="Instruction" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ImageUrl"></label>
+        <input asp-for="ImageUrl" class="form-control" />
+        <span asp-validation-for="ImageUrl" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

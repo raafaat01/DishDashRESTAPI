@@ -1,0 +1,21 @@
+﻿@model DishDashRESTAPIDatabase.Models.Recipe
+
+@{
+    ViewData["Title"] = "Recipe Details";
+}
+
+<h2>Recipe Details</h2>
+
+<div>
+    <h3>@Model.Name</h3>
+    <p><strong>Category:</strong> @Model.Category</p>
+    <p><strong>Ingredients:</strong> @Model.Ingredient</p>
+    <p><strong>Instructions:</strong> @Model.Instruction</p>
+    <p><strong>Image:</strong></p>
+    <img src="@Model.ImageUrl" alt="@Model.Name" style="max-width: 400px;" />
+</div>
+
+<p>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-secondary">Edit</a>
+    <a asp-action="Index" class="btn btn-primary">Back to List</a>
+</p>
